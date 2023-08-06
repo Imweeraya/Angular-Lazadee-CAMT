@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2">SPORTS STORE</span>
+      </div>
+    </div>
+    <div class="row text-white">
+      <!-- Categories -->
+      <div class="col-3 p-2">
+        <div class="d-grid gap-2">
+          <button class="btn btn-outline-primary" (click)="changeCategory()">
+            All
+          </button>
+          <button
+            *ngFor="let cat of categories"
+            class="btn btn-outline-primary"
+            [class.active]="cat == selectedCategory"
+            (click)="changeCategory(cat)"
+          >
+            {{ cat }}
+          </button>
+        </div>
+      </div>
+  
+      <!-- Product list -->
+      <div class="col-9 p-2 text-dark">
+        <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
+          <h4>
+            {{ product.name }}
+            <span class="badge rounded-pill bg-primary" style="float: right">
+              {{ product.price | currency : "USD" : "symbol" : "2.2-2" }}
+            </span>
+          </h4>
+          <div class="card-text bg-white p-1">{{ product.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>

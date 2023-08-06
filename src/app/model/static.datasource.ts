@@ -21,8 +21,9 @@ export class StaticDataSource {
     new Product(14, 'Product 14', 'Category 3', 'Product 14 (Category 3)', 100),
     new Product(15, 'Product 15', 'Category 3', 'Product 15 (Category 3)', 100),
   ];
-  
+
   getProducts(): Observable<Product[]> {
+    //Observable คล้ายๆ promise return เป็น บัตรคิวก่อน
     return from([this.products]);
   }
 }
