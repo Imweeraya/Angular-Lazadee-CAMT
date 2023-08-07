@@ -28,10 +28,16 @@ export class StoreComponent {
 
   changeCategory(newCategory?: string) {
     this.selectedCategory = newCategory;
+    this.changePage(this.selectedPage);
   }
 
   changePage(newPage: number) {
+    if(newPage <= this.pageNumbers.length){
       this.selectedPage = newPage;
+    }else{
+      this.selectedPage = 1;
+    }
+      
   }
 
   changePageSize(newSize: number) {
