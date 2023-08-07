@@ -28,7 +28,7 @@ export class StoreComponent {
 
   changeCategory(newCategory?: string) {
     this.selectedCategory = newCategory;
-    this.changePage(this.selectedPage);
+    this.changePage(this.selectedPage); //check page if more than pageNumbers it will be turn to page 1
   }
 
   changePage(newPage: number) {
